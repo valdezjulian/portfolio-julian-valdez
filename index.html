@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- SEÇÃO - CABEÇALHO -->
+<head>
+  <!-- Pré-conecta com o Google Fonts para otimizar o carregamento das fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Configurações básicas de caracteres e viewport -->
+  <meta charset="UTF-8" /> <!-- Define a codificação de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Configuração para responsividade -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Compatibilidade com IE -->
+
+  <!-- Meta tags para SEO básico -->
+  <meta name="description" content="Portfólio de Julian Valdez - Desenvolvedor Front-end" />
+  <meta name="author" content="Julian Valdez" />
+
+  <!-- Meta tags para compartilhamento em redes sociais (Open Graph) -->
+  <meta property="og:description" content="Portfólio de Julian Valdez - Desenvolvedor Front-end" />
+  <meta property="og:image"
+    content="./assets/images/imagem-de-julian-vestindo-camisa-social-branca-e-sorrindo-com-plantas-no-fundo.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Meta tags para melhor indexação em buscadores -->
+  <meta name="keywords"
+    content="developer, programação, dev, desenvolvedor, programador, html, css, javascript, nodejs, reactjs, react, github, frontend, front-end" />
+  <meta name="robots" content="index" /> <!-- Permite indexação pelos motores de busca -->
+
+  <!-- Favicon do site -->
+  <link rel="shortcut icon" href="assets/img/favicon-icon.png" type="image/x-icon">
+
+  <!-- Arquivos de estilo CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" /> <!-- Estilos principais -->
+  <link rel="stylesheet" href="assets/css/responsive.css"> <!-- Estilos para responsividade -->
+
+  <!-- Scripts externos -->
+  <script src="https://unpkg.com/scrollreveal"></script> <!-- Biblioteca para animações de scroll -->
+
+  <!-- Script principal do site (type="module" para usar import/export) -->
+  <script type="module" src="./assets/js/main.js" defer></script> <!-- defer para carregar após o HTML -->
+
+  <!-- Título da página -->
+  <title>Julian Valdez | Portfólio</title>
+</head>
+
+<body>
+
+  <!-- SEÇÃO - "NAVEGATION" -->
+  <nav id="navigation">
+    <!-- Container para centralizar o conteúdo -->
+    <div class="wrapper">
+      <!-- Container do menu de navegação -->
+      <div class="menu">
+        <!-- Lista de links internos do site -->
+        <ul class="nav-links">
+          <li><a href="#about" id="aboutNav" class="close">Sobre</a></li>
+          <li><a href="#projects" id="projectsNav" class="close">Projetos</a></li>
+          <li><a href="#knowledge" id="knowledgeNav" class="close">Hard Skills</a></li>
+          <li><a href="#contact" id="contactNav" class="close">Contato</a></li>
+        </ul>
+
+        <!-- Lista de links para redes sociais -->
+        <ul class="social-links">
+          <li>
+            <!-- Link para Instagram com ícone SVG -->
+            <a href="https://www.instagram.com/valdezjulian.dev/" target="_blank" aria-label="Instagram"
+              title="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                  stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                  stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.5 6.49997H17.51" stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <!-- Link para GitHub com ícone SVG -->
+            <a href="https://github.com/valdezjulian" aria-label="Github" title="Github" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z" />
+              </svg>
+            </a>
+          </li>
+
+          <li>
+            <!-- Link para LinkedIn com ícone SVG -->
+            <a href="https://www.linkedin.com/in/valdezjulian/" aria-label="Linkedin" title="LinkedIn" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Botão para abrir menu mobile -->
+      <button aria-expanded="false" aria-label="Abrir menu" class="open-menu open">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M10 12H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M18 28L30 28" stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <!-- Botão para fechar menu mobile -->
+      <button aria-expanded="true" aria-label="Fechar menu" class="close-menu close">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 10L10 30M10 10L30 30" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- SEÇÃO - "HOME" -->
+  <section id="home">
+    <!-- Container para centralizar e limitar largura do conteúdo -->
+    <div class="wrapper">
+      <!-- Coluna A - Conteúdo textual e CTA -->
+      <div class="col-a">
+        <!-- Cabeçalho com saudação e apresentação -->
+        <header>
+          <h4>Hello world!</h4>
+          <h1>I'm Julian Valdez,</h1>
+        </header>
+
+        <!-- Área de conteúdo com profissão e botão de download -->
+        <div class="content">
+          <!-- Texto com efeito de digitação -->
+          <p class="line typing">Desenvolvedor Web Front-end</p>
+
+          <!-- Botão para download do currículo com ícone SVG -->
+          <a href="assets/docs/Currículo - Julian Valdez .pdf" download="Curriculo-Julian-Valdez"
+            class="button download-btn">
+            Download CV
+            <!-- Ícone de download em SVG -->
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17.5 12.5v.833a3.333 3.333 0 0 1-3.333 3.334H5.833A3.333 3.333 0 0 1 2.5 13.333V12.5M10 2.5v10m0 0l4.167-4.167M10 12.5l-4.167-4.167"
+                stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna B - Conjunto de imagens decorativas -->
+      <div class="col-b">
+        <!-- Imagem principal do notebook -->
+        <img src="assets/img/notebook.png" alt="Imagem de um notebook." id="notebook-1" />
+
+        <!-- Imagens com efeitos de notebook quebrado - tema claro -->
+        <img src="assets/img/notebook-2-white.png" alt="Imagem de um notebook com tela quebrada" id="notebook-2" />
+
+        <!-- Imagens com efeitos de notebook quebrado - tema escuro -->
+        <img src="assets/img/notebook-2.png" alt="Imagem de um notebook com tela quebrada" id="notebook-2-white" />
+
+        <!-- Imagem dos estilhaços com ícones de tecnologias -->
+        <img src="./assets/img/vidro.png"
+          alt="Imagem de estilhaços de vidro com os ícones de HTML5, CSS3 e JavaScript por cima." id="vidro" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO - "SOBRE" -->
+  <section id="about" class="section">
+    <!-- Container para centralizar e limitar largura do conteúdo -->
+    <div class="wrapper">
+
+      <!-- Coluna A - Texto de apresentação -->
+      <div class="col-a">
+        <!-- Cabeçalho da seção -->
+        <header>
+          <h2>Sobre mim</h2>
+        </header>
+
+        <!-- Área de conteúdo com texto biográfico -->
+        <div class="content">
+          <p>
+            <!-- Primeiro parágrafo - Experiência profissional -->
+            Profissional com ampla experiência em gestão e estratégias comerciais, com habilidades de análise, resolução
+            de problemas e visão orientada para resultados.
+            <br><br>
+            <!-- Segundo parágrafo - Especialidades -->
+            Especialista em identificar necessidades e otimizar processos, sempre focando na experiência do cliente e na
+            qualidade das soluções entregues.
+            <br><br>
+            <!-- Terceiro parágrafo - Abordagem de trabalho -->
+            Minha abordagem é guiada por organização, adaptabilidade e uma comunicação clara e direta, garantindo o
+            alinhamento entre objetivos e execução eficiente.
+            <br><br>
+            <!-- Quarto parágrafo - Desenvolvimento pessoal -->
+            Além disso, sou entusiasta do desenvolvimento contínuo, sempre buscando inovações tecnológicas para criar
+            experiências impactantes e intuitivas para os usuários.
+          </p>
+        </div>
+      </div>
+
+      <!-- Container da imagem de perfil -->
+      <div class="img-wrapper">
+        <!-- Imagem de perfil -->
+        <img src="./assets/img/julian.png" alt="Imagem de Julian" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO - "PROJETOS"-->
+  <section id="projects">
+    <!-- Container para o conteúdo -->
+    <div class="wrapper"></div>
+    <!-- Nota: A seção "desafio.js" está em duplicidade com a seção "projetos.js"
+       O objetivo é para edições ou manutenções futuras no projeto -->
+  </section>
+
+  <!-- SEÇÃO - "HARD SKILLS" -->
+  <section id="knowledge">
+    <!-- Container para centralizar e limitar largura do conteúdo -->
+    <div class="wrapper">
+      <!-- Cabeçalho da seção -->
+      <header>
+        <h2>Hard Skills</h2>
+      </header>
+
+      <!-- Container principal do conteúdo -->
+      <div class="content">
+        <!-- Grid de cards de habilidades -->
+        <div class="cards">
+          <!-- Card HTML5 -->
+          <div class="card">
+            <!-- Ícone da tecnologia -->
+            <img src="./assets/img/html.png" alt="Ícone do HTML5." />
+            <!-- Nome da tecnologia -->
+            <h3>HTML5</h3>
+            <!-- Descrição da tecnologia -->
+            <p>
+              HTML5 é uma linguagem de marcação de hipertexto, que usamos para
+              marcar os elementos da página e construí-la.
+            </p>
+          </div>
+
+          <!-- Card CSS3 -->
+          <div class="card">
+            <!-- Ícone da tecnologia -->
+            <img src="./assets/img/css.png" alt="Ícone do CSS3." />
+            <!-- Nome da tecnologia -->
+            <h3>CSS3</h3>
+            <!-- Descrição da tecnologia -->
+            <p>
+              CSS3 é uma linguagem de estilo usada para descrever a
+              apresentação dos elementos da página os estilizando.
+            </p>
+          </div>
+
+          <!-- Card JavaScript -->
+          <div class="card">
+            <!-- Ícone da tecnologia -->
+            <img src="./assets/img/js.png" alt="Ícone do Javascript." />
+            <!-- Nome da tecnologia -->
+            <h3>JavaScript</h3>
+            <!-- Descrição da tecnologia -->
+            <p>
+              JavaScript é uma linguagem de programação interpretada usada no
+              desenvolvimento web para descrever funcionalidades e
+              comportamentos da página.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO - "CONTATO" -->
+  <section id="contact">
+    <div class="wrapper">
+
+      <div class="col-a">
+        <header>
+          <h2>Entre em contato!</h2>
+        </header>
+
+        <div class="content">
+          <ul>
+            <li>
+              <a href="mailto: valdezjulian.tab@gmail.com" title="Enviar e-mail">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                    stroke="#00856F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M22 6L12 13L2 6" stroke="#00856F" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                valdezjulian.tab@gmail.com
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:+5567992146350" title="Fazer ligação">
+                <img src="./assets/img/celular.svg" alt="Ícone de celular." id="cel" />
+                +55 67 99214-6350
+              </a>
+            </li>
+          </ul>
+
+          <a class="button" title="Me chama no zap!" href="https://api.whatsapp.com/send?phone=5567992146350"
+            target="_blank">
+            <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m15.271 13.21c.578.185 1.078.416 1.543.7l-.031-.018c.529.235.986.51 1.403.833l-.015-.011c.02.061.032.13.032.203 0 .011 0 .021-.001.032v-.001c-.015.429-.11.832-.271 1.199l.008-.021c-.231.463-.616.82-1.087 1.01l-.014.005c-.459.243-1.001.393-1.576.411h-.006c-1.1-.146-2.094-.484-2.988-.982l.043.022c-1.022-.468-1.895-1.083-2.636-1.829l-.001-.001c-.824-.857-1.579-1.795-2.248-2.794l-.047-.074c-.636-.829-1.041-1.866-1.1-2.995l-.001-.013v-.124c.032-.975.468-1.843 1.144-2.447l.003-.003c.207-.206.491-.335.805-.341h.001c.101.003.198.011.292.025l-.013-.002c.087.013.188.021.292.023h.003c.019-.002.04-.003.062-.003.13 0 .251.039.352.105l-.002-.001c.107.118.189.261.238.418l.002.008q.124.31.512 1.364c.135.314.267.701.373 1.099l.014.063c-.076.361-.268.668-.533.889l-.003.002q-.535.566-.535.72c.004.088.034.168.081.234l-.001-.001c.405.829.936 1.533 1.576 2.119l.005.005c.675.609 1.446 1.132 2.282 1.54l.059.026c.097.063.213.103.339.109h.002q.233 0 .838-.752t.804-.752zm-3.147 8.216h.022c1.357 0 2.647-.285 3.814-.799l-.061.024c2.356-.994 4.193-2.831 5.163-5.124l.024-.063c.49-1.113.775-2.411.775-3.775s-.285-2.662-.799-3.837l.024.062c-.994-2.356-2.831-4.193-5.124-5.163l-.063-.024c-1.113-.49-2.411-.775-3.775-.775s-2.662.285-3.837.799l.062-.024c-2.356.994-4.193 2.831-5.163 5.124l-.024.063c-.49 1.117-.775 2.419-.775 3.787 0 2.141.698 4.12 1.879 5.72l-.019-.026-1.225 3.613 3.752-1.194c1.49 1.01 3.327 1.612 5.305 1.612h.047zm0-21.426h.033c1.628 0 3.176.342 4.575.959l-.073-.029c2.825 1.197 5.028 3.4 6.196 6.149l.029.076c.588 1.337.93 2.896.93 4.535s-.342 3.198-.959 4.609l.029-.074c-1.197 2.825-3.4 5.028-6.149 6.196l-.076.029c-1.327.588-2.875.93-4.503.93-.011 0-.023 0-.034 0h.002c-.016 0-.034 0-.053 0-2.059 0-3.992-.541-5.664-1.488l.057.03-6.465 2.078 2.109-6.279c-1.051-1.714-1.674-3.789-1.674-6.01 0-1.646.342-3.212.959-4.631l-.029.075c1.197-2.825 3.4-5.028 6.149-6.196l.076-.029c1.327-.588 2.875-.93 4.503-.93h.033-.002z" />
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+      <div class="contact-container">
+        <header class="form-header">
+          <h2>Vamos conversar?</h2>
+          <p>
+            Estou pronto para discutir novos projetos e oportunidades. Se você tem uma ideia ou precisa de ajuda em
+            algum projeto, ficarei feliz em conversar!
+          </p>
+        </header>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Nome" required>
+            <label for="name">Nome</label>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <label for="email">Email</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Mensagem" required></textarea>
+            <label for="message">Mensagem</label>
+          </div>
+
+          <button type="submit" class="button">Enviar mensagem</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO - "BACK TO TOP BUTTON" -->
+  <a id="backToTopButton" title="Voltar ao topo" href="#home">
+    <!-- SVG do botão com círculo e seta -->
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Círculo de fundo do botão -->
+      <circle cx="20" cy="20" r="20" fill="#00856F" />
+
+      <!-- Linha vertical da seta -->
+      <path d="M20 27V13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+      <!-- Linha angular da seta apontando para cima -->
+      <path d="M13 20L20 13L27 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+
+  <!-- SEÇÃO - "FOOTER" -->
+  <footer>
+    <div class="wrapper">
+      <!-- Coluna com logo e copyright -->
+      <div class="col-a">
+        <a class="logo" href="#home">Julian Valdez</a>
+        <p>
+          ©2024 Desenvolvido por Julian Valdez. <br />
+          Todos os direitos reservados.
+        </p>
+      </div>
+
+      <!-- Coluna com links de redes sociais -->
+      <div class="col-b">
+        <ul class="social-links">
+          <!-- Instagram -->
+          <li>
+            <a href="https://www.instagram.com/valdezjulian.dev/" aria-label="Instagram" title="Instagram"
+              target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 1.99997 17 1.99997Z"
+                  stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z"
+                  stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M17.5 6.49997H17.51" stroke="var(--icon-color)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </li>
+
+          <!-- Github -->
+          <li>
+            <a href="https://github.com/valdezjulian" aria-label="Github" title="Github" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"
+                  fill="var(--icon-color)" />
+              </svg>
+            </a>
+          </li>
+
+          <!-- LinkedIn -->
+          <li>
+            <a href="https://www.linkedin.com/in/valdezjulian/" aria-label="Linkedin" title="LinkedIn" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"
+                  fill="var(--icon-color)" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEÇÃO - "SWITCH MODE TOGGLE" -->
+  <div id="toggle">
+    <!-- Checkbox escondido para controlar o estado do toggle -->
+    <input id="sw-checkbox" type="checkbox" aria-label="Alternar tema claro/escuro">
+
+    <!-- Label que contém os ícones e funciona como botão visível -->
+    <label for="sw-checkbox">
+      <!-- Ícone da lua para tema escuro -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" class="moon-icon">
+        <!-- Caminho do SVG formando uma lua crescente -->
+        <path
+          d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z" />
+      </svg>
+
+      <!-- Ícone do sol para tema claro -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" class="sun-icon">
+        <!-- Caminho do SVG formando um sol com raios -->
+        <path
+          d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
+      </svg>
+    </label>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+/* === MEDIA QUERIES === */
+/* === DESKTOP (1024px+) === */
+@media (min-width: 1024px) {
+
+  /* === GERAL === */
+  body {
+    overflow: auto; /* Permite o scroll no desktop */
+  }
+
+  .wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+  }
+
+  section {
+    padding-block: 13rem; /* Aumenta o espaçamento em sessões */
+  }
+
+  /* Estilização do título nas sessões */
+  body section h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+    text-align: center;
+    padding: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  /* Definindo áreas para colunas */
+  .col-a {
+    grid-area: A;
+  }
+
+  .col-b {
+    grid-area: B;
+  }
+
+  /* === NAVIGATION === */
+  /* Reseta o estilo para navegação no desktop */
+  nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    position: initial;
+    font-size: initial;
+    transform: initial;
+    color: initial;
+    background-color: initial;
+    filter: initial;
+  }
+
+  /* Estilos para o menu de navegação */
+  nav#navigation .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  /* Links de navegação alinhados */
+  nav#navigation .menu ul:nth-child(1) {
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Tamanho dos links */
+  nav#navigation .menu ul:nth-child(1) li {
+    width: 8.4rem;
+    color: var(--paragraph);
+  }
+
+  /* Aumenta largura de links específicos */
+  nav#navigation .menu ul:nth-child(1) li:nth-child(3),
+  nav#navigation .menu ul:nth-child(1) li:nth-child(4) {
+    width: 12rem;
+  }
+
+  /* Esconde os botões de abrir/fechar menu no desktop */
+  nav#navigation .close-menu,
+  nav#navigation .open-menu {
+    display: none;
+  }
+
+  /* Estilo dos ícones sociais no menu */
+  nav#navigation .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  /* === HOME === */
+  /* Espaçamento superior na seção Home */
+  #home {
+    padding-top: var(--nav-height);
+  }
+
+  /* Layout da seção Home no desktop */
+  #home .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "A B";
+  }
+
+  /* Alinhamento do texto na coluna A */
+  #home .col-a {
+    text-align: left;
+    align-self: center;
+  }
+
+  /* Ajustes de fonte na Home */
+  #home h1 {
+    font-size: 6rem;
+  }
+
+  #home .content p {
+    font-size: 2.5rem;
+  }
+
+  #home .button {
+    margin: 0;
+  }
+
+  /* Aumenta largura das imagens */
+  #home img {
+    width: 42rem;
+  }
+
+  /* Redimensiona círculo decorativo */
+  #home .wrapper::before {
+    width: 40rem;
+    height: 40rem;
+    right: 3rem;
+    bottom: 7rem;
+  }
+
+  /* === ABOUT === */
+  /* Layout grid para a seção About */
+  #about .wrapper {
+    grid-template-columns: 48rem 1fr;
+    grid-template-areas: "B A";
+    gap: 6.7rem;
+  }
+
+  /* Ajusta colunas no grid */
+  #about .col-a {
+    grid-area: A;
+  }
+
+  #about .img-wrapper img {
+    transition: all 0.4s ease !important;
+  }
+
+  /* Zoom na imagem ao passar o mouse */
+  #about .img-wrapper:hover img {
+    transform: scale(1.20) !important;
+  }
+
+  /* Alinhamento da coluna B */
+  #about .col-b {
+    text-align: center;
+  }
+
+  /* === PROJECTS === */
+  #projects h2 {
+    width: 49.7rem;
+    margin-inline: auto;
+  }
+
+  /* Layout de grid para os cards de projetos */
+  #projects .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+
+  /* Ajuste de layout na seção Knowledge */
+  #knowledge .cards {
+    flex-direction: row;
+    padding: 0 2rem;
+  }
+
+  /* Estilo dos cards de conhecimento */
+  #knowledge .card {
+    flex: 1;
+    max-width: 380px;
+  }
+
+  /* Efeito hover nos cards */
+  #knowledge .card:hover {
+    transform: translateY(-5px);
+    box-shadow: -1rem 1.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  /* === CONTACT === */
+  /* Layout grid para a seção de contato */
+  #contact .wrapper {
+    grid-template-columns: 1fr 57.5rem;
+    grid-template-areas: "A B";
+  }
+
+  #contact .col-a {
+    margin-bottom: 0;
+  }
+
+}
+
+
+/* === TABLET (até 1023px) === */
+@media (max-width: 1023px) {
+  /* Alinhamento vertical dos cards de conhecimento */
+  #knowledge .cards {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+  }
+
+  /* Ajustes de largura dos cards */
+  #knowledge .card {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+
+  /* Tamanho da fonte nos títulos dos cards */
+  #knowledge .card h3 {
+    font-size: 2rem;
+  }
+}
+
+
+/* === TABLET (até 500px) === */
+@media (max-width: 500px) {
+
+  /* === GERAL === */
+  /* Ajuste de fonte para títulos em seções */
+  section h4 {
+    font-size: 1.2rem;
+  }
+
+  body section h2 {
+    font-size: 2.2rem;
+  }
+
+  section h3 {
+    font-size: 1.4rem;
+  }
+
+  section p,
+  section span,
+  footer p {
+    font-size: 1.3rem;
+  }
+
+  /* === NAVIGATION === */
+  /* Tamanho dos ícones do menu */
+  nav#navigation button svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* === HOME === */
+  #home h1 {
+    font-size: 3.8rem;
+  }
+
+  #home p {
+    font-size: 1.6rem;
+  }
+
+  #home .wrapper::before {
+    bottom: -2rem;
+  }
+
+  /* Padding para os cards na seção Knowledge */
+  #knowledge .cards {
+    padding: 0 1.5rem;
+  }
+
+  /* Ajustes para cards de conhecimento */
+  #knowledge .card {
+    max-width: 100%;
+    margin: 0 1rem;
+    padding: 2rem;
+  }
+
+  #knowledge .card img {
+    width: 7rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Efeito de clique nas imagens dos cards */
+  #knowledge .card:active img {
+    transform: scale(1.1);
+  }
+}
+
+
+/* === MOBILE (até 410px) === */
+@media (max-width: 410px) {
+  /* Ajuste de padding na wrapper para telas menores */
+  .wrapper {
+    padding-inline: 2rem;
+  }
+
+  /* Reduz o círculo decorativo na Home */
+  #home .wrapper::before {
+    width: 24rem;
+    height: 24rem;
+    bottom: -0.5rem;
+  }
+}
+
+
+/* === MOBILE PEQUENO (até 250px) === */
+@media (max-width: 250px) {
+  /* Ajusta padding em telas extremamente pequenas */
+  .wrapper {
+    padding-inline: 1rem;
+  }
+
+  /* Reduz tamanho das logos */
+  nav#navigation a.logo,
+  footer a.logo {
+    font-size: 2.5rem;
+  }
+
+  /* Reduz o círculo decorativo */
+  #home .wrapper::before {
+    width: 15rem;
+    height: 15rem;
+    bottom: 3.5rem;
+  }
+}

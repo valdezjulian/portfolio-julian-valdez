@@ -1,0 +1,1393 @@
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* === VARIABLES (ROOT) === */
+:root {
+  /* Cores principais */
+  --primary-color: #BB1228;
+  --primary-hover: #4b0d19;
+  --secundary-color: hsl(0, 0%, 0%);
+  --third-color: rgba(15, 15, 20, 0.3);
+  --bg-color: rgba(0, 0, 0, 0.5);
+
+  /* Cores do texto */
+  --headline: #BB1228;
+  --paragraph: #FFFFFF;
+  --paragraph-2: #999999;
+
+  /* Configurações gerais */
+  font-size: 62.5%;
+  /* 1rem = 10px */
+  --nav-height: 7.2rem;
+}
+
+/* Configurações base do HTML */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Configurações base do Body */
+body {
+  font-size: 1.6rem;
+  text-align: center;
+  overflow: overlay;
+  background-color: var(--bg-color);
+}
+
+/* Modo Light */
+body.light-mode {
+  --secundary-color: rgb(229, 229, 229);
+  --third-color: hwb(0 48% 52% / 0.356);
+  --bg-color: rgb(241, 241, 241);
+  --headline: hsl(0, 0%, 0%);
+  --paragraph: rgb(32, 32, 32);
+  --paragraph-2: hsl(calc(var(--hue) + 10), 14%, 3%);
+}
+
+/* Personalização da Scrollbar */
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: var(--paragraph);
+}
+
+
+/* === UTILITY CLASSES === */
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+/* Elementos básicos */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  color: var(--paragraph);
+}
+
+/* Configurações base das seções */
+section {
+  padding-block: 10rem;
+  padding-inline: 2rem;
+}
+
+/* Tipografia das seções */
+section h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--primary-color);
+}
+
+section h3 {
+  color: var(--headline);
+}
+
+section p,
+section span {
+  font-size: 1.8rem;
+  line-height: 130%;
+  color: var(--paragraph);
+}
+
+
+/* === BUTTONS === */
+.button {
+  background: none;
+  border: 0.2rem solid var(--primary-color);
+  margin-bottom: 6rem;
+  padding: 1.4rem 3rem;
+  width: fit-content;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  position: relative;
+  transition: all 400ms;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 0.2rem solid var(--primary-color);
+  cursor: pointer;
+}
+
+body.light-mode .button,
+body.light-mode #home h4 {
+  filter: brightness(0.8);
+}
+
+body.light-mode .button:hover {
+  filter: none;
+}
+
+
+/* === SOCIAL LINKS BASE === */
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.social-links li {
+  height: 3rem;
+}
+
+.social-links svg {
+  margin-top: 0.3rem;
+  transition: transform 300ms;
+}
+
+.social-links li:nth-child(2) svg {
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+.social-links svg:hover {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+}
+
+body .social-links li svg path {
+  transition: all 200ms;
+}
+
+
+/* === SVG COLORS === */
+#projects .card circle {
+  fill: var(--secundary-color);
+}
+
+/* Botão Voltar ao Topo */
+#backToTopButton circle {
+  fill: var(--primary-color);
+}
+
+/* Menu Mobile e Contato */
+#contact li path,
+#navigation button.open-menu path[stroke*="#00856F"] {
+  stroke: var(--primary-color);
+}
+
+/* Menu Mobile durante scroll */
+#navigation.scroll button.open-menu path[stroke*="#00856F"] {
+  stroke: var(--paragraph-2);
+}
+
+
+/* === NAVIGATION === */
+nav {
+  width: 100vw;
+  height: var(--nav-height);
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav.scroll {
+  background: var(--primary-color);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* === LOGO === */
+nav#navigation a.logo {
+  color: var(--primary-color);
+  font-size: 4rem;
+  transition: all 0.3s;
+}
+
+/* Logo - Estado de Scroll */
+nav#navigation.scroll a.logo {
+  color: white;
+}
+
+/* Logo - Modo Light */
+body.light-mode nav#navigation a.logo {
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+body.light-mode nav#navigation a.logo:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* Logo - Modo Light com Scroll */
+body.light-mode nav#navigation.scroll a.logo {
+  color: white;
+}
+
+
+/* === MENU NAVIGATION === */
+nav#navigation .menu ul li a {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+/* Menu - Modo Light */
+body.light-mode nav#navigation .menu ul li a {
+  color: black;
+  transition: all 0.3s;
+}
+
+/* Hover para modo dark */
+body:not(.light-mode) nav#navigation .menu ul li a:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+body.light-mode nav#navigation .menu ul li a:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* Menu - Modo Light com Scroll */
+body.light-mode nav#navigation.scroll .menu ul li a {
+  color: white;
+  transition: color 0.3s;
+}
+
+body.light-mode nav#navigation.scroll .menu ul li a:hover {
+  color: black;
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* Linha sob os links */
+body.light-mode nav#navigation .menu ul li a::after {
+  background-color: black;
+  transition: all 0.3s;
+}
+
+body.light-mode nav#navigation.scroll .menu ul li a::after {
+  background-color: white;
+}
+
+
+/* === NAVIGATION SOCIAL ICONS === */
+nav#navigation .social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav#navigation .social-links li a {
+  background: none !important;
+  border: none !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body:not(.light-mode) nav#navigation .social-links li:first-child svg path {
+  stroke: white !important;
+  transition: all 0.3s;
+}
+
+body:not(.light-mode) nav#navigation .social-links li:not(:first-child) svg path:last-child {
+  fill: white !important;
+  transition: all 0.3s;
+}
+
+body:not(.light-mode) nav#navigation .social-links li:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+/* Ícones - Modo Light */
+body.light-mode nav#navigation .social-links li:first-child svg path {
+  stroke: black;
+  transition: all 0.3s;
+}
+
+body.light-mode nav#navigation .social-links li:not(:first-child) svg path:last-child {
+  fill: black;
+  transition: all 0.3s;
+}
+
+/* Hover dos ícones - Modo Light */
+body.light-mode nav#navigation .social-links li:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+/* Ícones - Modo Light com Scroll */
+body.light-mode nav#navigation.scroll .social-links li {
+  background: transparent !important;
+}
+
+body.light-mode nav#navigation.scroll .social-links li a {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0;
+}
+
+/* Ajustes para os paths SVG no scroll */
+body.light-mode nav#navigation.scroll .social-links li svg {
+  background: transparent !important;
+}
+
+body.light-mode nav#navigation.scroll .social-links li:first-child svg path {
+  stroke: white;
+  transition: all 0.3s;
+}
+
+body.light-mode nav#navigation.scroll .social-links li:not(:first-child) svg path:last-child {
+  fill: white;
+  transition: all 0.3s;
+  background: transparent !important;
+}
+
+/* Hover no scroll */
+body.light-mode nav#navigation.scroll .social-links li:hover {
+  background: transparent !important;
+}
+
+body.light-mode nav#navigation.scroll .social-links li:hover a {
+  background: transparent !important;
+}
+
+body.light-mode nav#navigation.scroll .social-links li:hover svg {
+  background: transparent !important;
+}
+
+
+/* === MENU MOBILE === */
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav .menu,
+nav .close-menu {
+  position: fixed;
+}
+
+
+
+/* === MENU EXPANDED === */
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded nav#navigation.scroll {
+  background: none;
+  backdrop-filter: none;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu {
+  transform: translateX(100%);
+}
+
+body.menu-expanded .menu,
+body.menu-expanded nav.scroll .menu {
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  width: 100vw;
+  height: 100vh;
+  padding-top: var(--nav-height);
+  transition: transform 300ms;
+  transform: translateX(0);
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 8rem 0 10rem 0;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3.1rem;
+}
+
+body.menu-expanded nav .logo,
+body.menu-expanded button {
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-expanded button path {
+  stroke: white;
+}
+
+
+/* === HOME === */
+#home {
+  height: 100vh;
+  min-height: calc(60rem + var(--nav-height));
+  padding-block: 0;
+  background-color: var(--secundary-color);
+  display: flex;
+  align-items: center;
+}
+
+#home .wrapper {
+  height: 53rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+  position: relative;
+}
+
+/* Textos */
+#home h1 {
+  font-size: 4.5rem;
+  color: var(--headline);
+  line-height: 110%;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  display: inline-flex;
+  font-size: 1.8rem;
+  line-height: 150%;
+  font-weight: bold;
+  margin-bottom: 3.2rem;
+}
+
+/* Efeito de Digitação */
+#home .line {
+  border-right: 0.2rem solid var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#home .typing {
+  animation: line-typing 500ms steps(40) infinite normal,
+    typing 2s steps(40) 1.4s normal backwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 27.5rem;
+  }
+}
+
+@keyframes line-typing {
+  from {
+    border-right-color: var(--primary-color);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Botão */
+#home .button {
+  margin-inline: auto;
+}
+
+/* Imagem Flutuante */
+#home .col-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  animation: flutuar 3s infinite backwards;
+  position: relative;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(2rem);
+  }
+
+  50% {
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    transform: translateY(2rem);
+  }
+}
+
+/* Círculo decorativo */
+#home .wrapper::before {
+  content: "";
+  display: block;
+  width: 27rem;
+  height: 27rem;
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  position: absolute;
+  bottom: -3.1rem;
+  z-index: -1;
+  animation: appear 1s 500ms backwards;
+}
+
+/* Configurações das imagens */
+#home img {
+  width: 30rem;
+  min-width: 14.5rem;
+  display: block;
+  margin-inline: auto;
+  filter: contrast(1.2);
+}
+
+/* Estados das imagens */
+#home img#notebook-2-white,
+body.light-mode #home img#notebook-1,
+body.light-mode #home img#notebook-2 {
+  visibility: hidden;
+  opacity: 0;
+  animation: none;
+}
+
+#home img#notebook-1 {
+  animation: appear 1s 1s backwards;
+}
+
+#home img#notebook-2-white {
+  position: absolute;
+}
+
+body.light-mode #home img#notebook-2-white {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+}
+
+#home img#notebook-2 {
+  position: absolute;
+  z-index: 90;
+  animation: appear 1s 2s backwards;
+}
+
+#home img#vidro {
+  position: absolute;
+  z-index: 100;
+  right: -2rem;
+  animation: appear-vidro 1s 2.3s backwards;
+  filter: contrast(5);
+}
+
+/* Animações */
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-vidro {
+  from {
+    right: -4rem;
+    opacity: 0;
+  }
+
+  to {
+    right: -2rem;
+    opacity: 1;
+  }
+}
+
+
+/* === ABOUT === */
+#about {
+  text-align: left;
+}
+
+#about .wrapper {
+  display: grid;
+  gap: 2rem;
+  /* Espaço entre as colunas */
+}
+
+#about .img-wrapper {
+  overflow: hidden;
+  border-radius: 2rem;
+  width: fit-content;
+  position: relative;
+  /* Adiciona contexto de posicionamento */
+}
+
+#about .img-wrapper img {
+  width: 38rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 2rem black;
+  transition: all 0.4s ease;
+  display: block;
+}
+
+/* Efeito de zoom na imagem */
+#about .img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Modo light */
+body.light-mode #about .img-wrapper img {
+  box-shadow: 0 0 2rem rgba(94, 94, 94, 0.5);
+}
+
+
+/* === PROJECTS === */
+/* Seção de projetos - define o fundo */
+#projects {
+  background-color: var(--secundary-color);
+}
+
+/* Estilos para o cabeçalho da seção */
+#projects header {
+  margin-bottom: 6rem;
+}
+
+#projects header h2 {
+  margin-bottom: 1.6rem;
+}
+
+/* Estilo do parágrafo no cabeçalho */
+#projects header p {
+  max-width: 60rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+#projects header p a {
+  color: var(--paragraph);
+  font-weight: bold;
+  font-style: italic;
+  /* Deixa o link em itálico */
+}
+
+/* Cards dos projetos */
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* Layout de uma coluna */
+  gap: 3.2rem;
+  /* Espaço entre os cards */
+}
+
+/* Estilos base dos cards */
+#projects .card {
+  padding: 3rem;
+  background: var(--bg-color);
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+  /* Sombra leve */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  transition: all 0.4s ease;
+}
+
+/* Estilo para cards no modo Light */
+body.light-mode #projects .card {
+  background: var(--bg-color);
+  box-shadow:
+    0 0 20px rgba(94, 94, 94, 0.3),
+    -8px 8px 20px rgba(0, 0, 0, 0.2),
+    -4px 4px 10px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 4px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(94, 94, 94, 0.1);
+}
+
+/* Estilo de hover para cards no modo Light */
+body.light-mode #projects .card:hover {
+  transform: scale(1.05);
+  /* Aumenta levemente no hover */
+  box-shadow:
+    0 0 30px rgba(94, 94, 94, 0.4),
+    -12px 12px 30px rgba(0, 0, 0, 0.15),
+    -6px 6px 15px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 6px rgba(255, 255, 255, 0.6),
+    inset -1px -1px 6px rgba(0, 0, 0, 0.1);
+  background: var(--bg-color);
+  border: 1px solid rgba(94, 94, 94, 0.15);
+  z-index: 1;
+}
+
+/* Modo Dark - usando branco */
+body:not(.light-mode) #projects .card {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.1),
+    -8px 8px 20px rgba(0, 0, 0, 0.9),
+    -4px 4px 10px rgba(0, 0, 0, 0.7),
+    inset 1px 1px 4px rgba(255, 255, 255, 0.05),
+    inset -1px -1px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Hover modo Dark */
+body:not(.light-mode) #projects .card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.15),
+    -12px 12px 30px rgba(0, 0, 0, 0.9),
+    -6px 6px 15px rgba(0, 0, 0, 0.7),
+    inset 1px 1px 6px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 6px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 1;
+}
+
+/* Efeito de hover no modo Dark e Light */
+#projects .card:hover {
+  background: var(--third-color);
+}
+
+/* Wrapper da imagem do projeto */
+#projects .card .img-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+/* Imagem do projeto */
+#projects .card img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  /* Preenche o espaço proporcionalmente */
+  border-radius: 0.6rem;
+  transition: all 300ms;
+}
+
+/* Efeito de hover na imagem */
+#projects .card:hover>.img-wrapper img {
+  filter: opacity(0.5);
+  /* Reduz a opacidade ao passar o mouse */
+}
+
+/* Botões que aparecem no hover */
+#projects .card .buttons {
+  visibility: hidden;
+  /* Oculta os botões inicialmente */
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Centraliza verticalmente */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 400ms;
+}
+
+/* Mostra botões no hover */
+#projects .card:hover>.img-wrapper .buttons {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Estilo dos botões */
+#projects .card .buttons a {
+  background: #fff;
+  border-radius: 50%;
+  /* Botões redondos */
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
+}
+
+/* Hover nos botões */
+#projects .card .buttons a:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+
+/* Ícones dos botões */
+#projects .card .buttons a svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+#projects .card .buttons a svg path:nth-child(2) {
+  fill: #000;
+  transition: all 200ms;
+}
+
+/* Efeito de hover nos ícones dos botões */
+#projects .card .buttons a:hover svg path:nth-child(2) {
+  fill: #fff;
+}
+
+#projects .card .buttons a:hover>svg {
+  fill: #fff;
+}
+
+/* Caso especial para o 8º card */
+#projects .card:nth-child(8) svg path:nth-child(2) {
+  fill: var(--paragraph);
+}
+
+/* Botão ver mais */
+#projects .button {
+  margin: 6rem auto 0;
+  /* Centraliza e adiciona espaço superior */
+}
+
+
+/* === KNOWLEDGE === */
+/* Título da seção de conhecimento */
+#knowledge header h2 {
+  margin-bottom: 6rem;
+  color: var(--primary-color);
+  /* Cor do título */
+}
+
+/* Container dos cards de conhecimento */
+#knowledge .cards {
+  display: flex;
+  flex-direction: row;
+  /* Exibe os cards em linha */
+  justify-content: center;
+  gap: 2rem;
+  /* Espaço entre os cards */
+}
+
+/* Estilo base dos cards */
+#knowledge .card {
+  padding: 2.8rem;
+  text-align: left;
+  background: var(--secundary-color);
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+  /* Sombra leve */
+  transition: all 0.3s ease;
+  /* Transição suave ao interagir */
+  flex: 1;
+  /* Expande para preencher o espaço */
+  max-width: 380px;
+}
+
+/* Efeito de hover nos cards */
+#knowledge .card:hover {
+  background: var(--third-color);
+  /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Estilo dos títulos dentro dos cards */
+#knowledge .card h3 {
+  margin-block: 1.6rem;
+  font-weight: 700;
+  /* Negrito */
+}
+
+/* Imagem dos cards */
+#knowledge .card img {
+  width: 10rem;
+  height: auto;
+  /* Mantém a proporção */
+}
+
+
+/* === CONTACT === */
+/* Seção de contato */
+#contact {
+  text-align: left;
+  background-color: var(--secundary-color);
+  /* Cor de fundo */
+}
+
+/* Formulário de contato */
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  /* Limita a largura máxima */
+  margin: 0 auto;
+  /* Centraliza o formulário */
+  padding: 2rem;
+  background-color: var(--secundary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra para profundidade */
+}
+
+/* Título e parágrafo do formulário */
+.contact-form h2 {
+  color: var(--primary-color);
+  /* Cor do título */
+  font-size: 3rem;
+  margin-bottom: 1.6rem;
+  text-align: left;
+}
+
+.contact-form p {
+  color: var(--paragraph);
+  margin-bottom: 2.4rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Coluna A - Informações de contato */
+#contact .col-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#contact .col-a .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+/* Lista de contatos */
+#contact ul {
+  margin-bottom: 2rem;
+}
+
+/* Estilo dos links de contato */
+#contact ul a,
+#about .content a:nth-child(2) {
+  width: fit-content;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  transition: all 300ms;
+}
+
+#contact ul a {
+  color: var(--paragraph);
+}
+
+#contact ul a:hover {
+  background: var(--third-color);
+  /* Fundo muda no hover */
+}
+
+/* Ícones de contato */
+#contact a path {
+  transition: all 400ms;
+}
+
+/* Cor dos ícones */
+#contact a.button path {
+  fill: var(--primary-color);
+}
+
+#contact a.button:hover path {
+  fill: #fff;
+  /* Muda a cor ao passar o mouse */
+}
+
+/* Rotação leve em imagens específicas */
+#contact ul li:nth-child(2) a img {
+  rotate: -15deg;
+}
+
+#contact ul li:nth-child(2) a path {
+  stroke: none;
+  /* Remove o contorno */
+}
+
+/* Coluna B - Imagem flutuante */
+#contact .col-b {
+  height: 38rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#contact .col-b img {
+  width: 13rem;
+  animation: flutuar 2.5s infinite backwards;
+  /* Animação de flutuação */
+  filter: brightness(1.2);
+  /* Aumenta o brilho */
+}
+
+/* Sombra da coluna B */
+#contact .col-b::after {
+  content: "";
+  display: block;
+  width: 13rem;
+  height: 5rem;
+  background-color: black;
+  border-radius: 100%;
+}
+
+body.light-mode #contact .col-b::after {
+  background-color: grey;
+}
+
+/* Configuração dos campos do formulário */
+.form-group {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  color: var(--paragraph);
+  font-size: 1.6rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  opacity: 0;
+  /* Oculta o placeholder */
+}
+
+/* Label animada */
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.6rem;
+  color: var(--paragraph-2);
+  pointer-events: none;
+  /* Impede interação */
+  transform-origin: 0 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+  background-color: var(--secundary-color);
+  padding: 0 0.5rem;
+}
+
+/* Estilo do formulário ao interagir */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-hover);
+  outline: none;
+}
+
+.form-group input:focus~label,
+.form-group textarea:focus~label,
+.form-group input:not(:placeholder-shown)~label,
+.form-group textarea:not(:placeholder-shown)~label {
+  transform: translateY(-2.4rem) scale(0.8);
+  color: var(--primary-color);
+}
+
+/* Área de texto do formulário */
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botão do formulário */
+.contact-form button {
+  margin: 2rem auto 0;
+  background: none;
+  border: 0.2rem solid var(--primary-color);
+  padding: 1.4rem 3rem;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 400ms;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Estilos para o formulário no modo Light */
+body.light-mode .contact-form {
+  background-color: var(--secundary-color);
+}
+
+body.light-mode .form-group label {
+  background-color: var(--secundary-color);
+}
+
+
+/* === FOOTER === */
+/* Estilo base do rodapé */
+footer {
+  background-color: #5E5E5E;
+  text-align: left;
+  border-top: 1px solid var(--third-color);
+  /* Borda superior para divisão */
+}
+
+/* Modo Light - Footer */
+body.light-mode footer {
+  background-color: var(--primary-color);
+  /* Cor de fundo para o modo claro */
+}
+
+/* Wrapper para centralizar o conteúdo e definir layout */
+footer .wrapper {
+  width: min(112rem, 100%);
+  margin-inline: auto;
+  padding: 3rem 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  /* Espaço entre logo e links sociais */
+  align-items: center;
+}
+
+/* Logo do Footer */
+footer .logo {
+  display: inline-block;
+  font-size: 4rem;
+  color: black;
+  margin-bottom: 2.4rem;
+  transition: color 0.3s;
+  /* Transição suave ao mudar a cor */
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+/* Hover na logo do Footer */
+footer .logo:hover {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+/* Modo Light - Logo do Footer */
+body.light-mode footer .logo {
+  color: white;
+  font-weight: bold;
+}
+
+body.light-mode footer .logo:hover {
+  color: black;
+}
+
+/* Texto do Footer */
+footer .col-a p {
+  line-height: 2;
+  color: black;
+  font-size: 1.4rem;
+}
+
+/* Texto no Modo Light */
+body.light-mode footer .col-a p {
+  color: white;
+}
+
+/* Ícones Sociais do Footer */
+footer .social-links li:first-child svg path {
+  stroke: black;
+}
+
+footer .social-links li:not(:first-child) svg path:last-child {
+  fill: black;
+}
+
+/* Hover nos ícones sociais */
+footer .social-links li:first-child a:hover svg path {
+  stroke: var(--primary-color);
+}
+
+footer .social-links li:not(:first-child) a:hover svg path:last-child {
+  fill: var(--primary-color);
+}
+
+/* Modo Light - Ícones Sociais do Footer */
+body.light-mode footer .social-links li:first-child svg path {
+  stroke: white;
+}
+
+body.light-mode footer .social-links li:not(:first-child) svg path:last-child {
+  fill: white;
+}
+
+/* Hover dos ícones no Modo Light */
+body.light-mode footer .social-links li:first-child a:hover svg path {
+  stroke: black;
+}
+
+body.light-mode footer .social-links li:not(:first-child) a:hover svg path:last-child {
+  fill: black;
+}
+
+
+/* === SWITCH MODE TOGGLE === */
+/* Botão de alternância entre modos (dark/light) */
+#toggle {
+  display: flex;
+  position: fixed;
+  bottom: 2rem;
+  left: 2.5rem;
+}
+
+/* Esconde o input, deixando apenas o label visível */
+#toggle input {
+  position: absolute;
+  visibility: hidden;
+}
+
+/* Label do Toggle (aparência do botão) */
+#toggle label {
+  width: 8rem;
+  height: 4rem;
+  background-color: var(--secundary-color);
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Indicador dentro do Toggle */
+#toggle label::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  bottom: 0.5rem;
+  left: 0.6rem;
+  transition: transform 500ms;
+  /* Transição suave ao mudar de posição */
+}
+
+/* Move o indicador ao alternar */
+#toggle input:checked+label::before {
+  transform: translateX(3.8rem);
+}
+
+/* Ícones dentro do Toggle */
+#toggle .moon-icon,
+#toggle .sun-icon {
+  z-index: 1;
+}
+
+/* Ícone de Lua */
+#toggle .moon-icon {
+  fill: white;
+}
+
+/* Ícone de Sol */
+#toggle .sun-icon {
+  fill: var(--primary-color);
+}
+
+/* Modo Light - Ícones do Toggle */
+body.light-mode #toggle .moon-icon {
+  fill: var(--primary-color);
+}
+
+body.light-mode #toggle .sun-icon {
+  fill: black;
+}
+
+
+/* === BACK TO TOP BUTTON === */
+/* Botão de voltar ao topo */
+#backToTopButton {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
+  transform: translateY(100%);
+  /* Esconde o botão fora da tela */
+}
+
+/* Estilo quando o botão é visível */
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  /* Move o botão para dentro da tela */
+}
