@@ -8,7 +8,7 @@ function projetos(section) {
     <div class="card">
       <h3>Calculadora de Juros Compostos</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/calculadora-juros-compostos.gif" alt="Imagem do projeto Card Animation." />
+        <img src="./assets/GIFs/calculadora-juros-compostos.gif" alt="Imagem do projeto Card Animation." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/calculadora-de-juros" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -36,7 +36,7 @@ function projetos(section) {
     <div class="card">
       <h3>Login Form</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/login-form.gif" alt="Imagem do projeto Login Form." />
+        <img src="./assets/GIFs/login-form.gif" alt="Imagem do projeto Login Form." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/login-form" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -64,7 +64,7 @@ function projetos(section) {
     <div class="card">
       <h3>Jogo da Velha</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/jogo-da-velha.gif" alt="Imagem do projeto Card Animation." />
+        <img src="./assets/GIFs/jogo-da-velha.gif" alt="Imagem do projeto Card Animation." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/jogo-da-velha" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -92,7 +92,7 @@ function projetos(section) {
     <div class="card">
       <h3>Card Animation</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/card-animation.gif" alt="Imagem do projeto Card Animation." />
+        <img src="./assets/GIFs/card-animation.gif" alt="Imagem do projeto Card Animation." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/card-animation" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -120,7 +120,7 @@ function projetos(section) {
     <div class="card">
       <h3>Alphatech Ecommecer</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/alphatech-ecommcer.gif" alt="Imagem do projeto Alphatech Ecommecer." />
+        <img src="./assets/GIFs/alphatech-ecommcer.gif" alt="Imagem do projeto Alphatech Ecommecer." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/alphatech-ecommecer" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -146,7 +146,7 @@ function projetos(section) {
     <div class="card">
       <h3>Clone Tesla</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/tesla.gif" alt="Imagem do projeto Card Animation." />
+        <img src="./assets/GIFs/tesla.gif" alt="Imagem do projeto Card Animation." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/tesla-electric-cars" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -174,7 +174,7 @@ function projetos(section) {
     <div class="card">
       <h3>Website - Podocure</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/website-podocure.gif" alt="Imagem do projeto." />
+        <img src="./assets/GIFs/website-podocure.gif" alt="Imagem do projeto." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/website-podocure" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -200,7 +200,7 @@ function projetos(section) {
     <div class="card">
       <h3>Sistema Solar</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/sistema-solar.gif" alt="GIF do projeto Sistema Solar" />
+        <img src="./assets/GIFs/sistema-solar.gif" alt="GIF do projeto Sistema Solar" />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/sistema-solar" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -226,7 +226,7 @@ function projetos(section) {
     <div class="card">
       <h3>Linktree</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/linktree.gif" alt="GIF do projeto Linktree" />
+        <img src="./assets/GIFs/linktree.gif" alt="GIF do projeto Linktree" />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/linktree" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -255,7 +255,7 @@ function projetos(section) {
     <div class="card">
       <h3>Jokenpô Arcade</h3>
       <div class="img-wrapper">
-        <img src="./assets/gifs/jokenpo-arcade.gif" alt="GIF do projeto Jokenpô Arcade." />
+        <img src="./assets/GIFs/jokenpo-arcade.gif" alt="GIF do projeto Jokenpô Arcade." />
         <div class="buttons">
           <a href="https://github.com/valdezjulian/jokenpo-arcade" target="_blank" title="Repositório no Github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
