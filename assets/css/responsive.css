@@ -168,9 +168,8 @@
     margin-inline: auto;
   }
 
-  /* Layout de grid para os cards de projetos */
   #projects .cards {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas apenas no desktop */
     gap: 4rem;
   }
 
@@ -225,6 +224,12 @@
   /* Tamanho da fonte nos títulos dos cards */
   #knowledge .card h3 {
     font-size: 2rem;
+  }
+
+  #projects .cards {
+    grid-template-columns: 1fr; /* Mantém uma coluna */
+    max-width: 60rem; /* Limita a largura máxima dos cards */
+    margin: 0 auto; /* Centraliza os cards */
   }
 }
 
@@ -292,6 +297,12 @@
   /* Efeito de clique nas imagens dos cards */
   #knowledge .card:active img {
     transform: scale(1.1);
+  }
+
+  #projects .cards {
+    grid-template-columns: 1fr; /* Mantém uma coluna */
+    max-width: 60rem; /* Limita a largura máxima dos cards */
+    margin: 0 auto; /* Centraliza os cards */
   }
 }
 
