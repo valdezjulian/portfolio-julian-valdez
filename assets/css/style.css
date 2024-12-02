@@ -737,10 +737,8 @@ body.light-mode #about .img-wrapper img {
 /* Cards dos projetos */
 #projects .cards {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  /* Layout de uma coluna */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 3.2rem;
-  /* Espaço entre os cards */
 }
 
 /* Estilos base dos cards */
